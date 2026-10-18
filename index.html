@@ -20,19 +20,21 @@
   --brand-teal: #2a9d8f;
   --brand-amber: #f2a541;
   --brand-navy: #1f3a5f;
+  --wm-skift: #1e7268;
+  --wm-ora: #c9862a;
   --display: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   --body: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #0f1b2b; --surface: #16263a; --fg: #e6edf4; --muted: #a9b8c8; --line: #263a52;
-    --accent: #4cc2b3; --accent-fg: #0f1b2b; --brand-navy: #8fb3dc;
+    --accent: #4cc2b3; --accent-fg: #0f1b2b; --brand-navy: #8fb3dc; --wm-skift: var(--fg); --wm-ora: #ffc870;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0f1b2b; --surface: #16263a; --fg: #e6edf4; --muted: #a9b8c8; --line: #263a52;
-  --accent: #4cc2b3; --accent-fg: #0f1b2b; --brand-navy: #8fb3dc;
+  --accent: #4cc2b3; --accent-fg: #0f1b2b; --brand-navy: #8fb3dc; --wm-skift: var(--fg); --wm-ora: #ffc870;
   color-scheme: dark;
 }
 
@@ -58,8 +60,11 @@ a { color: inherit; }
 /* header */
 .site-header { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--line); margin-inline: -16px; padding-inline: 16px; }
 .site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding-block: 14px; }
-.wordmark { font-family: var(--display); font-weight: 500; font-size: 24px; color: var(--fg); letter-spacing: -0.02em; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
+.wordmark { font-family: var(--display); font-weight: 700; font-size: 24px; color: var(--fg); letter-spacing: 0.01em; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
 .wordmark svg { width: 30px; height: 30px; display: block; }
+/* Two-colour wordmark, as in the app: "Skift" teal, "ora" amber (lighter on dark). */
+.wm-skift { color: var(--wm-skift); }
+.wm-ora { color: var(--wm-ora); }
 .nav { display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 15px; }
 .nav a { text-decoration: none; color: var(--muted); padding-block: 4px; }
 .nav a:hover { color: var(--fg); }
@@ -143,7 +148,7 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: g
   <div class="wrap">
     <a class="wordmark" href="#top">
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#1E7268"/><path d="M33 12 L20 25 L33 38" fill="none" stroke="#ffffff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 26 L44 39 L31 52" fill="none" stroke="#F2A541" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Skiftora</span>
+      <span aria-label="Skiftora"><span class="wm-skift">Skift</span><span class="wm-ora">ora</span></span>
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#how">How it works</a>
