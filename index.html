@@ -128,6 +128,15 @@ section { padding-block: 72px; border-top: 1px solid var(--line); scroll-margin-
 .pilot-cta { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 20px; }
 .pilot-cta p { color: var(--muted); font-size: 15px; max-width: 40em; }
 
+/* Screenshots from the demo */
+.shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-top: 40px; align-items: start; }
+.shot { margin: 0; display: grid; gap: 12px; }
+.shot.wide { grid-column: 1 / -1; }
+.shot img { display: block; width: 100%; height: auto; background: #ffffff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 18px 40px -26px rgba(31, 58, 95, 0.45); }
+.shot figcaption { color: var(--muted); font-size: 15px; }
+.shot figcaption b { color: var(--fg); }
+.shots-note { margin-top: 20px; font-size: 14px; color: var(--muted); }
+
 footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: grid; gap: 6px; color: var(--muted); font-size: 14px; }
 
 @media (max-width: 900px) {
@@ -135,6 +144,7 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: g
   .hero { padding-block: 44px 56px; gap: 36px; }
   .signals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .features { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .shots { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   section { padding-block: 52px; }
 }
 @media (max-width: 520px) {
@@ -218,6 +228,16 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: g
       </div>
     </div>
     <p class="callout"><strong>You stay in charge.</strong> Every suggestion shows its reasoning, and nothing changes on the rota until a manager approves it. When there isn't much history to go on yet, Skiftora says so.</p>
+    <div class="shots">
+      <figure class="shot">
+        <img src="img/suggestion-reasons.webp" width="1200" height="506" loading="lazy" alt="A Saturday-night bartender shift in Skiftora: 2 of 2 confirmed, AI suggests 3, high confidence from 7 matching past shifts, because of cloudy conditions and a local event nearby.">
+        <figcaption><b>Every suggestion shows its working.</b> For Saturday night it suggests a third bartender: cloudy, and the harbour festival is on, based on 7 similar past shifts. You decide.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="img/local-events.webp" width="1200" height="342" loading="lazy" alt="Skiftora's local events list: a farmers' market waiting to be confirmed, and a football match on TV and a harbour festival marked as raising staffing.">
+        <figcaption><b>Local events you confirm.</b> The match on TV and the harbour festival raise staffing for those days. Events the weekly search finds wait for you to confirm them.</figcaption>
+      </figure>
+    </div>
   </section>
 
   <section id="features">
@@ -250,6 +270,17 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: g
         <p>Candidates for a shift appear without names first, and picking someone by name records why.</p>
       </div>
     </div>
+    <div class="shots">
+      <figure class="shot wide">
+        <img src="img/week-grid.webp" width="1200" height="750" loading="lazy" alt="Skiftora's week grid for a pub: shifts by position for each day, with two shifts still needing someone marked in orange.">
+        <figcaption><b>The week grid.</b> Every shift by position, with hours against what's needed. Gaps show in orange: here a late bar shift on Friday and a chef on Sunday.</figcaption>
+      </figure>
+      <figure class="shot wide">
+        <img src="img/swap-requests.webp" width="1200" height="241" loading="lazy" alt="Skiftora's swap requests: a shift posted to the team, and a direct swap between two servers waiting for approval.">
+        <figcaption><b>Swaps go through you.</b> One server has offered a shift to the team; a direct swap between two others is waiting for your tick.</figcaption>
+      </figure>
+    </div>
+    <p class="shots-note">Screenshots from the Skiftora demo: a made-up pub with made-up staff.</p>
   </section>
 
   <section id="staff">
