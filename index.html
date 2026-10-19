@@ -138,6 +138,23 @@ section { padding-block: 72px; border-top: 1px solid var(--line); scroll-margin-
 .shot figcaption b { color: var(--fg); }
 .shots-note { margin-top: 20px; font-size: 14px; color: var(--muted); }
 
+
+/* Layout from the brand voice (voice.md) */
+.land { margin-top: 44px; font-family: var(--display); font-weight: 650; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.25; max-width: 28em; text-wrap: balance; }
+.land::before { content: ""; display: block; width: 40px; height: 3px; background: var(--brand-amber); margin-bottom: 16px; }
+section.breath { padding-block: 104px; }
+.breath p { font-family: var(--display); font-weight: 700; font-size: clamp(28px, 4.2vw, 46px); line-height: 1.12; letter-spacing: -0.015em; max-width: 19em; text-wrap: balance; }
+.breath p span { color: var(--muted); }
+.without { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 40px; }
+.without li { border-top: 1.5px solid var(--fg); padding-top: 16px; display: grid; gap: 8px; align-content: start; }
+.without h3 { font-size: 21px; display: flex; gap: 10px; align-items: baseline; }
+.without h3::before { content: "✕"; color: #c0392b; font-size: 17px; }
+.without p { color: var(--muted); font-size: 15.5px; }
+.family { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; padding-bottom: 16px; margin-bottom: 6px; border-bottom: 1px solid var(--line); }
+.family-label { font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.family a.fam { display: inline-flex; align-items: center; gap: 8px; color: var(--fg); font-weight: 600; font-size: 15px; text-decoration: none; }
+.family a.fam:hover, .family-label:hover { color: var(--accent); }
+.family img { width: 28px; height: 28px; border-radius: 7px; display: block; }
 footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: grid; gap: 6px; color: var(--muted); font-size: 14px; }
 
 @media (max-width: 900px) {
@@ -146,11 +163,26 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: g
   .signals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .features { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .shots { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .without { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  section.breath { padding-block: 64px; }
   section { padding-block: 52px; }
 }
 @media (max-width: 520px) {
   .signals { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Footer, centred and stacked like every Skeillebank site: wordmark, page links, the family, then the legal line. */
+footer.sfoot { display: grid; justify-items: center; text-align: center; gap: 0; padding-block: 44px 40px; }
+.sfoot .wordmark { justify-content: center; }
+.sfoot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 26px; margin-top: 18px; font-size: 15px; }
+.sfoot-links a { color: var(--muted); text-decoration: none; }
+.sfoot-links a:hover { color: var(--fg); }
+.sfoot .family { width: 100%; justify-content: center; margin: 26px 0 0; padding: 24px 0 0; border-top: 1px solid var(--line); border-bottom: none; }
+.sfoot .family-label { flex-basis: 100%; text-align: center; margin-bottom: 2px; }
+.sfoot-fine { width: 100%; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); display: grid; gap: 6px; font-size: 13.5px; color: var(--muted); }
+.sfoot-fine a { color: inherit; }
+.family-label img { height: 24px; width: auto; border-radius: 0; }
+a.family-label { display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
 </style>
 </head>
 <body>
@@ -175,7 +207,7 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: g
     <div>
       <p class="eyebrow">Staff scheduling for independent hospitality</p>
       <h1>Rotas that see the busy night coming.</h1>
-      <p class="lead">Most rota tools put the schedule online. Skiftora helps you predict it. It suggests how many staff each shift needs from the weather, local events and your own history, and shows you why. You approve every rota.</p>
+      <p class="lead">Every manager remembers the Saturday that caught them out: the sun came out, the match went to extra time, and half the town turned up. Skiftora reads the same signs you would, the weather, local events and your own history, and suggests how many staff each shift needs, with its reasons. You make the call.</p>
       <div class="cta-row">
         <a class="btn primary" href="mailto:info@skiftora.com?subject=Skiftora%20pilot">Join the pilot</a>
         <a class="btn ghost" href="demo.html">Try the demo</a>
@@ -239,6 +271,11 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: g
         <figcaption><b>Local events you confirm.</b> The match on TV and the harbour festival raise staffing for those days. Events the weekly search finds wait for you to confirm them.</figcaption>
       </figure>
     </div>
+    <p class="land">It reads the same signs you would, and writes them down.</p>
+  </section>
+
+  <section class="breath" aria-label="The manager's hunch">
+    <p>A good manager can feel a busy Saturday coming. <span>Skiftora turns the hunch into numbers you can check.</span></p>
   </section>
 
   <section id="features">
@@ -282,6 +319,28 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: g
       </figure>
     </div>
     <p class="shots-note">Screenshots from the Skiftora demo: a made-up pub with made-up staff. <a href="demo.html">Try it yourself →</a></p>
+    <p class="land">Every change on the rota still goes through you.</p>
+  </section>
+
+  <section id="without">
+    <div class="sec-head">
+      <h2>What Skiftora leaves out</h2>
+    </div>
+    <ul class="without">
+      <li>
+        <h3>A black box</h3>
+        <p>Every suggestion shows its reasons, and how many past shifts it's based on.</p>
+      </li>
+      <li>
+        <h3>Changes you didn't make</h3>
+        <p>Nothing on the rota changes until a manager approves it.</p>
+      </li>
+      <li>
+        <h3>Favourites by default</h3>
+        <p>Candidates for a shift appear without names first, and picking someone by name records why.</p>
+      </li>
+    </ul>
+    <p class="land">Your rota, your call.</p>
   </section>
 
   <section id="staff">
@@ -301,6 +360,7 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: g
         <p class="fineprint">The staff app is on Android. An iPhone app isn't available yet.</p>
       </div>
     </div>
+    <p class="land">Fewer “can anyone cover Saturday?” messages for you.</p>
   </section>
 
   <section id="pilot">
@@ -334,9 +394,30 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 40px; display: g
     </div>
   </section>
 
-  <footer>
-    <span>Skiftora is operated by Skeillebank Ltd, registered in Northern Ireland, company no. NI744153. Registered office: 8 Manse Road, Drumquin, BT78 4SD.</span>
-    <span>© 2026 Skeillebank Ltd · <a href="mailto:info@skiftora.com">info@skiftora.com</a> · <a href="https://shiftsense-web-pilot.azurewebsites.net/docs/privacy-policy">Privacy</a> · <a href="https://shiftsense-web-pilot.azurewebsites.net/docs/terms-of-use">Terms</a></span>
+  <footer class="sfoot">
+    <a class="wordmark" href="#top">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#1E7268"/><path d="M33 12 L20 25 L33 38" fill="none" stroke="#ffffff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 26 L44 39 L31 52" fill="none" stroke="#F2A541" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span aria-label="Skiftora"><span class="wm-skift">Skift</span><span class="wm-ora">ora</span></span>
+    </a>
+    <nav class="sfoot-links" aria-label="Footer">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#staff">For staff</a>
+      <a href="#pilot">Pilot</a>
+      <a href="mailto:info@skiftora.com">Contact</a>
+      <a href="https://shiftsense-web-pilot.azurewebsites.net/docs/privacy-policy">Privacy</a>
+      <a href="https://shiftsense-web-pilot.azurewebsites.net/docs/terms-of-use">Terms</a>
+    </nav>
+    <nav class="family" aria-label="Skeillebank products">
+      <a class="family-label label" href="https://skeillebank.com"><img src="logos/skeillebank.webp" alt="" width="23" height="24">Made by Skeillebank</a>
+      <a class="fam" href="https://entrycode.uk"><img src="logos/entrycode.svg" alt="" width="28" height="28">EntryCode</a>
+      <a class="fam" href="https://bokapay.co.uk"><img src="logos/bokapay.svg" alt="" width="28" height="28">BokaPay</a>
+      <a class="fam" href="https://ikveld.com"><img src="logos/ikveld.svg" alt="" width="28" height="28">iKveld</a>
+    </nav>
+    <div class="sfoot-fine">
+      <p>Skiftora is operated by Skeillebank Ltd, registered in Northern Ireland, company no. NI744153. Registered office: 8 Manse Road, Drumquin, BT78 4SD.</p>
+      <p>© 2026 Skeillebank Ltd · <a href="mailto:info@skiftora.com">info@skiftora.com</a></p>
+    </div>
   </footer>
 </main>
 
