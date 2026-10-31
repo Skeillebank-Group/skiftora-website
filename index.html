@@ -68,6 +68,8 @@ a { color: inherit; }
 .wm-ora { color: var(--wm-ora); }
 .nav { display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 15px; }
 .nav a { text-decoration: none; color: var(--muted); padding-block: 4px; }
+/* Touch screens: each menu link a full 44px tap target, easy for either thumb. */
+@media (pointer: coarse) { .nav a { display: inline-flex; align-items: center; min-height: 44px; } }
 .nav a:hover { color: var(--fg); }
 
 /* buttons */
