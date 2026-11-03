@@ -120,9 +120,12 @@ section { padding-block: 72px; border-top: 1px solid var(--line); scroll-margin-
 .feature p { color: var(--muted); font-size: 15.5px; }
 
 .staff { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: start; }
-.ticks { list-style: none; padding: 0; display: grid; gap: 10px; }
-.ticks li { padding-left: 28px; position: relative; }
-.ticks li::before { content: ""; position: absolute; left: 0; top: 0.45em; width: 14px; height: 8px; border-left: 2.5px solid var(--accent); border-bottom: 2.5px solid var(--accent); transform: rotate(-45deg); }
+/* Tick lists (voice.md, 31 Oct 2026): the apps' filled circle and tick, centred on the first line. */
+.ticks { list-style: none; padding: 0; display: grid; gap: 12px; }
+.ticks li { padding-left: 34px; position: relative; }
+.ticks li::before, .ticks li::after { content: ""; position: absolute; left: 0; top: calc(0.5lh - 11px); width: 22px; height: 22px; }
+.ticks li::before { border-radius: 50%; background: var(--accent); }
+.ticks li::after { background: var(--accent-fg); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center / 15px no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") center / 15px no-repeat; }
 .fineprint { margin-top: 18px; font-size: 15px; color: var(--muted); }
 
 .pilot { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
